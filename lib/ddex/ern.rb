@@ -3,6 +3,7 @@ require "nokogiri"
 
 module DDEX
   module ERN
+    autoload :V32,  "ddex/ern/v32"
     autoload :V33,  "ddex/ern/v33"
     autoload :V34,  "ddex/ern/v34"
     autoload :V341, "ddex/ern/v341"
@@ -69,7 +70,13 @@ module DDEX
         :schema => "http://ddex.net/xml/2011/ern-main/33/ern-main.xsd",
         :version => "3.3",
         :message_schema_version_id => "2011/ern-main/33"
-      }
+      },
+
+      "V32" => {
+        :schema => "http://ddex.net/xml/2010/ern-main/32/ern-main.xsd",
+        :version => "3.2",
+        :message_schema_version_id => "2010/ern-main/32"
+      },
     }.freeze
 
     mattr_reader :config
@@ -156,6 +163,7 @@ module DDEX
     end
 
     def self.load_version(version)
+      puts 'first check'
       raise_unknown_version(version) if version.nil?
 
       # Some normalization
@@ -163,12 +171,14 @@ module DDEX
       klass, _ = config.find do |name, cfg|
         cfg[:message_schema_version_id] == v || cfg[:version] == v
       end
+      puts 'second check'
       raise_unknown_version(version) unless klass
 
       # >= 2.0 allows for one call
       DDEX::ERN.const_get(klass).const_get(ROOT_ELEMENT)
-    rescue LoadError, NameError => e
-      raise_unknown_version(version)
+   # rescue LoadError, NameError => e
+   #   puts 'From the Rescue'
+   #   raise_unknown_version(version)
     end
   end
 end

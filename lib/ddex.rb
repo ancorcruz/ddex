@@ -1,5 +1,9 @@
+$:.unshift(File.dirname(__FILE__))
+$:.unshift("#{File.dirname(__FILE__)}/../")
+
 require "roxml"
 require "ddex/element"
+require "net/ddex/xml/v20100712/ddexc/element"
 
 module DDEX
   autoload :ERN, "ddex/ern"

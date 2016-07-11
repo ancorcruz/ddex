@@ -5,6 +5,8 @@ require "roxml"
 require "ddex/element"
 require "net/ddex/xml/v20100712/ddexc/element"
 require "net/ddex/xml/v20110120/ddexc/element"
+require "net/ddex/xml/v2011/amep/v11/element"
+require "org/w3/v2000/v09/xmldsig/element"
 
 module DDEX
   autoload :ERN, "ddex/ern"

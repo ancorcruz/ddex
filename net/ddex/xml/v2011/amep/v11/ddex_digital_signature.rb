@@ -10,7 +10,7 @@
 require "roxml"
 require "ddex/element"
 
-require "net/ddex/xml/v2011/amep/v11/key_info"
+#require "net/ddex/xml/v2011/amep/v11/key_info"
 require "org/w3/v2000/v09/xmldsig/signature_value"
 require "org/w3/v2000/v09/xmldsig/signed_info"
 
@@ -24,7 +24,7 @@ class Net::Ddex::Xml::V2011::Amep::V11::DdexDigitalSignature < Element
 
       xml_accessor :signed_info, :as => Org::W3::V2000::V09::Xmldsig::SignedInfo, :from => "SignedInfo", :required => true
       xml_accessor :signature_value, :as => Org::W3::V2000::V09::Xmldsig::SignatureValue, :from => "SignatureValue", :required => true
-      xml_accessor :key_info, :as => Net::Ddex::Xml::V2011::Amep::V11::KeyInfo, :from => "KeyInfo", :required => true
+#      xml_accessor :key_info, :as => Net::Ddex::Xml::V2011::Amep::V11::KeyInfo, :from => "KeyInfo", :required => true
 
 
   

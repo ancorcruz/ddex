@@ -4,9 +4,11 @@ $:.unshift("#{File.dirname(__FILE__)}/../")
 require "roxml"
 require "ddex/element"
 require "net/ddex/xml/v20100712/ddexc/element"
+require "net/ddex/xml/v20110120/ddexc/element"
 
 module DDEX
   autoload :ERN, "ddex/ern"
+  autoload :ECHO, "ddex/echo"
 
   XML_SCHEMA_INSTANCE_PREFIX = "xsi".freeze
   XML_SCHEMA_INSTANCE_NS     = "http://www.w3.org/2001/XMLSchema-instance".freeze

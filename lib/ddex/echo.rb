@@ -13,7 +13,7 @@ module DDEX
         :schema => "http://service.ddex.net/xml/2011/echo/11/echo.xsd",
         :version => "1.1",
         #:message_schema_version_id => "2011/echo/11"
-        :message_schema_version_id => "2010/ern-main/312"
+        :message_schema_version_id => "2010/ern-main/32"
       },
     }.freeze
 

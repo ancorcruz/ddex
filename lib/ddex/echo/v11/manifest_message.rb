@@ -30,7 +30,7 @@ class ManifestMessage < Element
       xml_accessor :batch_product_type, :as => DDEX::V20110120::DDEXC::ProductType, :from => "BatchProductType", :required => true
       xml_accessor :root_directory, :from => "RootDirectory", :required => true
       xml_accessor :number_of_messages, :as => Integer, :from => "NumberOfMessages", :required => true
-      xml_accessor :message_in_batches, :as => [DDEX::ECHO::V11::MessageInBatch], :from => "MessageInBatch", :required => true
+      xml_accessor :messages_in_batch, :as => [DDEX::ECHO::V11::MessageInBatch], :from => "MessageInBatch", :required => true
 
 
   

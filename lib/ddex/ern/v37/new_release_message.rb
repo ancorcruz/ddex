@@ -20,7 +20,7 @@ module DDEX module ERN module V37  # :nodoc: all
 class NewReleaseMessage < Element
   include ROXML
 
-    setns "ns1", "http://ddex.net/xml/ern/37"
+    setns "ern", "http://ddex.net/xml/ern/37"
 
   xml_name "NewReleaseMessage"
 

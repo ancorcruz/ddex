@@ -35,6 +35,22 @@ describe DDEX::ERN do
         end
       end
     end
+
+    describe "ERN #{version} namespace prefix for" do
+      %w[NewReleaseMessage CatalogListMessage PurgeReleaseMessage MusicalWorkLicenseInformationMessage].each do |message|
+        klass = "DDEX::ERN::V#{version.scan(/\d|D/).join('')}::#{message}"
+        next unless const_defined? klass
+
+        describe message do
+          it "is ern" do
+            ern = klass.constantize.new
+            doc = Nokogiri::XML(DDEX::ERN.write(ern))
+
+            expect(doc.root.namespace.prefix).to eq "ern"
+          end
+        end
+      end
+    end
   end
 end
 

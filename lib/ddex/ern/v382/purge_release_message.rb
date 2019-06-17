@@ -18,7 +18,7 @@ module DDEX module ERN module V382  # :nodoc: all
 class DDEX::ERN::V382::PurgeReleaseMessage < Element
   include ROXML
 
-    setns "ns1", "http://ddex.net/xml/ern/382"
+    setns "ern", "http://ddex.net/xml/ern/382"
 
   xml_name "PurgeReleaseMessage"
 

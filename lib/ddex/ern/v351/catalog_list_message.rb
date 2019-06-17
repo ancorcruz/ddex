@@ -14,7 +14,7 @@ module DDEX module ERN module V351  # :nodoc: all
 class CatalogListMessage < Element
   include ROXML
 
-    setns "ns3", "http://ddex.net/xml/ern/351"
+    setns "ern", "http://ddex.net/xml/ern/351"
 
   xml_name "CatalogListMessage"
 
